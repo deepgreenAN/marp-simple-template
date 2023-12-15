@@ -1,0 +1,47 @@
+// ページナンバー
+section {
+    &::after {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding-bottom: 5px;
+        text-align: center;
+        content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+    }
+}
+
+// フッター
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    // 実際のコンテナ
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 10px 10px 10px;
+    
+        .logo-container {
+            margin-right: 30px;
+            width: 250px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    // 底のグラデーションライン
+    .bottom-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    }
+}

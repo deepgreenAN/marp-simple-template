@@ -1,0 +1,49 @@
+// よく使うようなレイアウトをクラスとして記述する．
+// sectionに直接利用する場合は詳細度を増やす必要がある．
+
+// 縦2段組のレイアウト
+.layout-col-2, section.layout-col-2 {
+  // それぞれのwidth
+  --left-width: 1fr;
+  --right-width: 1fr;
+  --gap: 0px;
+
+  display: grid;
+  grid-template-columns: var(--left-width) var(--right-width);
+  grid-auto-flow: row;
+  row-gap: var(--gap);
+}
+
+// 縦3段組みのレイアウト
+.layout-col-3, section.layout-col-3 {
+  // それぞれのwidth
+  --left-width: 1fr;
+  --center-width: 1fr;
+  --right-width: 1fr;
+  --gap: 0px;
+
+  display: grid;
+  grid-template-columns: var(--left-width) var(--center-width) var(--right-width);
+  grid-auto-flow: row;
+  row-gap: var(--gap);
+}
+
+// 2 × 2のグリッドレイアウト
+.layout-grid-22, section.layout-grid-22 {
+  --cell-width: 1fr;
+  --cell-height: 1fr;
+
+  display: grid;
+  grid-template-columns: repeat(2, var(--cell-width));
+  grid-template-rows: repeat(2, var(--cell-height));
+}
+
+// ただのフレックスコンテナ(セクションのクラスとして使う)
+.layout-flex {
+  display: flex;
+}
+
+// ただのグリッドコンテナ(セクションのクラスとして使う)
+.layout-grid {
+  display: grid;
+}

@@ -1,0 +1,16 @@
+{
+    "markdown.marp.themes": [
+        "./awesome_marp.css",
+        "./theme.css"
+    ],
+    "markdown.marp.enableHtml": true,
+    "markdownlint.config": {
+        "MD033": false,
+        "MD025": false,
+    },
+    "editor.tabSize": 2,
+    "cSpell.words": [
+        "fukidashi",
+        "tsuno"
+    ]
+}
