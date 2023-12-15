@@ -4,7 +4,7 @@
 
 ## requirements
 
-- marp(npm)
+- marp-cli(npm)
 - nu
 - just
 - sass(dart-sass)
