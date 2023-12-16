@@ -39,11 +39,11 @@
 }
 
 // ただのフレックスコンテナ(セクションのクラスとして使う)
-.layout-flex {
+.layout-flex, section.layout-flex {
   display: flex;
 }
 
 // ただのグリッドコンテナ(セクションのクラスとして使う)
-.layout-grid {
+.layout-grid, section.layout-grid {
   display: grid;
 }

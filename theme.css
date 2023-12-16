@@ -97,11 +97,11 @@ footer .bottom-bar {
   grid-template-rows: repeat(2, var(--cell-height));
 }
 
-.layout-flex {
+.layout-flex, section.layout-flex {
   display: flex;
 }
 
-.layout-grid {
+.layout-grid, section.layout-grid {
   display: grid;
 }
 

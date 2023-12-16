@@ -154,19 +154,19 @@ fugafugaに関わる開発
 $p$を素数，$a$を整数とすると
 
 $$
-  a^p \equiv a \quad( \mod p) \\
+  a^p \equiv a \pmod{p} \\
 $$
 
 ここで$a$と$p$を互いに素とした場合
 
 $$
-  a^{p-1} \equiv 1 \quad(\mod p)
+  a^{p-1} \equiv 1 \pmod{p}
 $$
 
 </div>
 
 これを数学的帰納法で証明する．まず，$a = 1$のときは明らかに正しい．
-次に$(m+1)^p$について考えると
+次に整数$m$を用いた$(m+1)^p$について考えると
 $$
  (m + 1) ^p = m^p + _pC_1m^{p-1} + _pC_{2}m^{p-1} + \ldots + _{p}C_{p-1}m + 1
 $$
@@ -177,8 +177,14 @@ $$
 $$
 は$p$が素数であるため$p$で約分できず，$p$の倍数であるから
 $$
-  (m + 1)^p \equiv m^p + 1 \quad (\mod p)
+  (m + 1)^p \equiv m^p + 1 \pmod{p}
 $$
+となる．
+ここでフェルマーの小定理が$a = m$の場合に成り立つとすると，$m^p \equiv m \pmod{p}$より$m^p + 1 \equiv m + 1 \pmod{p}$だから，
+$$
+  (m + 1)^p \equiv m + 1 \pmod{p}
+$$
+つまり，$a = m + 1$でも成り立つことが分かり，数学的帰納法によって証明される．
 
 ---
 
@@ -195,9 +201,11 @@ $$
   </div>
  -->
 
-## Example
-
 公開鍵を用いて暗号化したデータを秘密鍵を用いて復号してみる．
+
+- 秘密鍵をOS乱数によって生成する．
+- 秘密鍵から公開鍵を生成する．
+- 公開鍵によって`data`を暗号化し，暗号化したデータを秘密鍵によって復号化する．
 
 ```rust
 use rsa::{Pkcs1v15Encrypt, RsaPrivateKey, RsaPublicKey};
@@ -220,6 +228,8 @@ assert_eq!(&data[..], &dec_data[..]);
 もし`RsaPrivateKey::new`による鍵の生成が遅い場合はリリースビルドを行う．
 
 ---
+
+<!-- _class: "layout-flex" -->
 <!-- _header: 
   <div class="header-container">
     <h1>なんかの表</h1>
@@ -232,12 +242,25 @@ assert_eq!(&data[..], &dec_data[..]);
     </div>
   </div>
  -->
+<div class="some-table">
 
 | 項目1          | 項目2 | 他と比べて長い項目1 | ほかとくらべてさらにながい項目 |
 |----------------|-------|---------------------|--------------------------------|
 | 15.6           | 十    | $e = mc^2$          | 22.3                           |
-| 12.4           | 一    | $x = x$             | ここに日本語が入る           |
-| ここに長い要素 | 五    | $y = ax + b$        | 12.6                           |
+| 12.4           | 一    | $x = 1$             | ここに日本語が入る           |
+| ここに長い要素 | 五    | $f(x) = \frac{1}{\sigma \sqrt{2\pi}} \mathrm{exp}{ \bigl\{ -\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2 \bigr\}}$        | 12.6                           |
+
+</div>
+
+<style scoped>
+  section.layout-flex {
+    justify-content: center;
+    align-items: center;
+  }
+  section.layout-flex .some-table  {
+    margin-bottom: 200px;
+  }
+</style>
 
 ---
 <!-- _class: "footnote-page" -->
@@ -433,12 +456,14 @@ dddd
 
 <div class="svg-arrow">
 
+<!-- よく使うsvgは以下のようにsvgスプライトとして使うことでcssを反映できる -->
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <use href="#right-arrow-svg" />
 </svg>
 
 </div>
 
+<!-- 特殊文字で適当なものがあれば図形として利用できる -->
 <div class="right-curly-brace">&#x7D;</div>
 
 <div class="fukidashi">
@@ -457,6 +482,8 @@ dddd
   }
   .right-curly-brace {
     font-size: 150px;
+    width: fit-content;
+    transform: scale(1.5);
     color: blue;
   }
   .fukidashi {
@@ -476,7 +503,7 @@ dddd
 
 発表は以上となります．ご静聴ありがとうございました．
 
-<!-- 以下はsvgスプライト用 -->
+<!-- 以下はsvgスプライト用．よく使う図形を置いておく -->
 
 <style scoped>
   /* svgスプライト用コンテナは非表示にする */
