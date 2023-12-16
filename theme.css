@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /* @theme theme */
+/* 一番最初に読み込むためのラッパー */
+@import "default" layer(default);
 @import 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css';
 @import url("https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-/* 一番最初に読み込むためのラッパー */
-@import-theme "default";
 @auto-scaling true;
 header {
   position: absolute;
