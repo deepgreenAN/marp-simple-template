@@ -19,7 +19,7 @@ header .header-container {
   border-style: solid;
   border-width: 0 0 5px 0;
   border-color: color-mix(in srgb, var(--text-color) 70%, white 30%);
-  margin: 0 25px 0 25px;
+  margin: 0 1.5rem 0 1.5rem;
   display: flex;
   align-items: flex-end;
 }
@@ -33,9 +33,10 @@ section::after {
   width: 100%;
   left: 0;
   bottom: 0;
-  padding-bottom: 5px;
+  padding-bottom: calc(0.4 * var(--font-size-page));
   text-align: center;
   content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+  font-size: var(--font-size-page);
 }
 
 footer {
@@ -50,11 +51,12 @@ footer .footer-container {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 10px 10px 10px;
+  padding: 0 0.6rem 0.6rem 0.6rem;
+  font-size: var(--font-size-footer);
 }
 footer .footer-container .logo-container {
-  margin-right: 30px;
-  width: 250px;
+  margin-right: 3%;
+  width: 20%;
 }
 footer .footer-container .logo-container img {
   width: 100%;
@@ -71,7 +73,7 @@ footer .bottom-bar {
 .layout-col-2, section.layout-col-2 {
   --left-width: 1fr;
   --right-width: 1fr;
-  --gap: 0px;
+  --gap: 0;
   display: grid;
   grid-template-columns: var(--left-width) var(--right-width);
   grid-auto-flow: row;
@@ -82,7 +84,7 @@ footer .bottom-bar {
   --left-width: 1fr;
   --center-width: 1fr;
   --right-width: 1fr;
-  --gap: 0px;
+  --gap: 0;
   display: grid;
   grid-template-columns: var(--left-width) var(--center-width) var(--right-width);
   grid-auto-flow: row;
@@ -115,8 +117,8 @@ footer .bottom-bar {
   border-radius: 10px;
 }
 .img-container .caption {
-  margin-top: 10px;
   font-size: var(--font-size-text);
+  margin-top: 0.5rem;
 }
 
 .info, .note, .warn, .theorem {
@@ -124,24 +126,23 @@ footer .bottom-bar {
   flex-direction: column;
   border-left: 8px solid;
   border-radius: 4px;
-  padding: 10px 20px 10px 20px;
+  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
 }
 .info:not(:last-child), .note:not(:last-child), .warn:not(:last-child), .theorem:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 0.6rem;
 }
 .info .caption, .note .caption, .warn .caption, .theorem .caption {
   width: 100%;
-  height: calc(2 * var(--font-size-text));
+  height: calc(1.2 * var(--font-size-text-large));
   font-size: var(--font-size-text-large);
   font-weight: bold;
-  margin-left: 1%;
-  margin-bottom: 10px;
+  margin-bottom: calc(0.5 * var(--font-size-text-large));
   display: inline-flex;
   align-items: center;
 }
 .info .caption::before, .note .caption::before, .warn .caption::before, .theorem .caption::before {
-  width: calc(2 * var(--font-size-text));
-  margin: 10px 20px 0 0;
+  width: calc(1.9 * var(--font-size-text-large));
+  margin: calc(0.3 * var(--font-size-text-large)) calc(0.6 * var(--font-size-text-large)) 0 0;
 }
 
 .info {
@@ -150,6 +151,7 @@ footer .bottom-bar {
 }
 .info .caption::before {
   content: url("assets/template/info.svg");
+  width: calc(1.7 * var(--font-size-text-large));
 }
 
 .warn {
@@ -158,7 +160,6 @@ footer .bottom-bar {
 }
 .warn .caption::before {
   content: url("assets/template/warning.svg");
-  width: calc(2.2 * var(--font-size-text));
 }
 
 .theorem {
@@ -167,7 +168,6 @@ footer .bottom-bar {
 }
 .theorem .caption::before {
   content: url("assets/template/book.svg");
-  width: calc(2.1 * var(--font-size-text));
 }
 
 .state {
@@ -179,20 +179,20 @@ footer .bottom-bar {
   align-items: center;
   z-index: -1;
   color: var(--text-color);
-  font-size: var(--font-size-text);
 }
-.state div {
-  min-width: 120px;
-  height: 50px;
+.state > div {
+  min-width: 7rem;
+  height: 2.3rem;
   position: relative;
-  padding: 0 10px 0 10px;
+  padding: 0 0.6rem 0 0.6rem;
+  font-size: var(--font-size-text);
   display: flex;
   justify-content: center;
   align-items: center;
   --radius: 20%;
   --border-width: 3px;
 }
-.state div::before {
+.state > div::before {
   content: "";
   position: absolute;
   top: 0;
@@ -204,24 +204,25 @@ footer .bottom-bar {
   border-right: var(--border-width) solid white;
   z-index: -2;
 }
-.state div:first-child::before {
+.state > div:first-child::before {
   border-radius: var(--radius) 0 0 var(--radius);
 }
-.state div:last-child::before {
+.state > div:last-child::before {
   border-right: none;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
-.state div.active::before {
+.state > div.active::before {
   background-color: color-mix(in srgb, var(--secondary-color) 30%, white 70%);
 }
 
 .fukidashi {
   position: relative;
-  min-width: 300px;
+  min-width: 10rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  min-height: 60px;
+  padding: 0.5rem;
+  min-height: 4rem;
   background-color: #9f9fff;
   border-radius: 15px;
   display: flex;
@@ -235,10 +236,10 @@ footer .bottom-bar {
   position: absolute;
   z-index: -1;
   background-color: inherit;
-  top: calc(90% - 30px);
+  top: calc(90% - 1.5rem);
   left: var(--tsuno-left);
-  width: 50px;
-  height: 50px;
+  width: 2.7rem;
+  height: 2.7rem;
   transform: rotate(var(--tsuno-rotate)) skew(30deg, 30deg);
 }
 
@@ -247,17 +248,17 @@ footer .bottom-bar {
   --font-family-title: "Roboto", "BIZ UDGothic";
   --font-family-footer: "Roboto", "BIZ UDGothic";
   --font-family-code: "hack";
-  --font-size-title: 55px;
-  --font-size-1: 50px;
-  --foot-size-subtitle: 42px;
-  --font-size-2: 38px;
-  --font-size-3: 30px;
-  --font-size-text-large: 25px;
+  --font-size-title: 3rem;
+  --foot-size-subtitle: 2.6rem;
+  --font-size-1: 2.8rem;
+  --font-size-2: calc(0.9 * var(--font-size-1));
+  --font-size-3: calc(0.8 * var(--font-size-1));
+  --font-size-text-large: calc(1.2 * var(--font-size-text));
   --font-size-text: 20px;
-  --font-size-text-small: 16px;
-  --font-size-footer: 16px;
-  --font-size-page: 12px;
-  --font-size-code: 22px;
+  --font-size-text-small: calc(0.9 * var(--font-size-text));
+  --font-size-footer: calc(0.9 * var(--font-size-text));
+  --font-size-page: calc(1 * var(--font-size-text));
+  --font-size-code: calc(0.95 * var(--font-size-text));
   --primary-color: #00258c;
   --primary-color-rgb: 0, 37, 140;
   --secondary-color: #ffae00;
@@ -278,10 +279,10 @@ section {
   font-size: var(--font-size-text);
   color: var(--text-color);
 }
-section.text-large {
+section.text-large :where(p, li, code, strong, blockquote, td, section > div) {
   font-size: var(--font-size-text-large);
 }
-section.text-small {
+section.text-small :where(p, li, code, strong, blockquote, td, section > div) {
   font-size: var(--font-size-text-small);
 }
 
@@ -347,12 +348,12 @@ blockquote {
   border-radius: 8px;
   background-color: #fef2e2;
   font-size: var(--font-size-text);
-  padding: 10px 20px 10px 20px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
 }
 blockquote p::before {
   content: "\f6b0";
   font-family: "bootstrap-icons";
-  margin-right: 1%;
+  margin-right: 0.8rem;
   color: var(--primary-color);
 }
 
@@ -373,8 +374,8 @@ section.toc-page-v1, section.toc-page-v2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
   --row-number: 8;
   --toc-ul-width: 80%;
 }
@@ -383,7 +384,7 @@ section.toc-page-v1 ul, section.toc-page-v2 ul {
   list-style-type: none;
   border-radius: 0 0 30px 30px;
   box-shadow: 10px 10px 30px rgba(var(--primary-color-rgb), 0.3);
-  padding: 30px 50px 30px 50px;
+  padding: 2rem 2rem 2rem 2rem;
   background-color: white;
 }
 section.toc-page-v1 ul li, section.toc-page-v2 ul li {
@@ -393,9 +394,9 @@ section.toc-page-v1 ul li, section.toc-page-v2 ul li {
 section.toc-page-v1 ul li::before, section.toc-page-v2 ul li::before {
   content: counter(tocItem);
   font-size: var(--font-size-text-large);
-  width: calc(var(--font-size-text-large) + 10px);
-  height: calc(var(--font-size-text-large) + 10px);
-  margin: 0 30px 0 10px;
+  width: calc(var(--font-size-text-large) + 0.6rem);
+  height: calc(var(--font-size-text-large) + 0.6rem);
+  margin: 0 1rem 0 0.6rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -408,7 +409,7 @@ section.toc-page-v1 ul {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(var(--row-number), auto);
   grid-auto-flow: column;
-  row-gap: 10px;
+  row-gap: 0.6rem;
 }
 section.toc-page-v2 {
   --toc-ul-height: 70%;
@@ -417,7 +418,7 @@ section.toc-page-v2 ul {
   height: var(--toc-ul-height);
   display: flex;
   flex-flow: column wrap;
-  gap: 10px;
+  gap: 0.6rem;
 }
 section.toc-page-v2 ul li {
   width: 50%;
@@ -425,19 +426,19 @@ section.toc-page-v2 ul li {
 section.footnote-page .footnote {
   margin-top: auto;
   width: 100%;
-  height: 70px;
+  min-height: 4.5rem;
   border-style: dashed;
   border-width: 2px 0 0 0;
   border-color: var(--primary-color);
   font-size: var(--font-size-text-small);
 }
 section.end-page {
-  font-size: var(--font-size-2);
   text-align: center;
   padding-bottom: 20%;
 }
 section.end-page p {
   margin: auto 0;
+  font-size: var(--font-size-3);
 }
 
 /*# sourceMappingURL=theme.css.map */

@@ -26,17 +26,18 @@
   --font-family-footer: 'Roboto', 'BIZ UDGothic';
   --font-family-code: 'hack';
 
-  --font-size-title: 55px;
-  --font-size-1: 50px;
-  --foot-size-subtitle: 42px;
-  --font-size-2: 38px; 
-  --font-size-3: 30px;
-  --font-size-text-large: 25px; 
+  --font-size-title: 3rem;
+  --foot-size-subtitle: 2.6rem;
+  --font-size-1: 2.8rem;
+  --font-size-2: calc(0.9 * var(--font-size-1)); 
+  --font-size-3: calc(0.8 * var(--font-size-1));
+  --font-size-text-large: calc(1.2 * var(--font-size-text)); 
+  // sectionのフォントサイズはpxで指定する必要がある．その他のremはそれに対する比に再計算される． 
   --font-size-text: 20px;
-  --font-size-text-small: 16px;
-  --font-size-footer: 16px;
-  --font-size-page: 12px;
-  --font-size-code: 22px;
+  --font-size-text-small: calc(0.9 * var(--font-size-text));
+  --font-size-footer: calc(0.9 * var(--font-size-text));
+  --font-size-page: calc(1 * var(--font-size-text));
+  --font-size-code: calc(0.95 * var(--font-size-text));
 
   --primary-color: #00258c;
   --primary-color-rgb: 0, 37, 140;
@@ -60,14 +61,19 @@
 // フォント・色の設定
 section {
   font-family: var(--font-family-main);
-  font-size: var(--font-size-text);
+  font-size: var(--font-size-text); // これは上書きしてはいけない
   color: var(--text-color);
 
+  // 以下ではsection自体のfont-sizeは上書きしない
   &.text-large {
-    font-size: var(--font-size-text-large);
+    :where(p, li, code, strong, blockquote, td, section>div){
+      font-size: var(--font-size-text-large);
+    }
   }
   &.text-small {
-    font-size: var(--font-size-text-small);
+    :where(p, li, code, strong, blockquote, td, section>div) {
+      font-size: var(--font-size-text-small);
+    }
   }
 }
 
@@ -131,12 +137,12 @@ blockquote {
   border-radius: 8px;
   background-color: #fef2e2;
   font-size: var(--font-size-text);
-  padding: 10px 20px 10px 20px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
 
   p::before {
     content: "\F6B0";
     font-family: "bootstrap-icons";
-    margin-right: 1%;
+    margin-right: 0.8rem;
     color: var(--primary-color);
   }
 }
@@ -167,8 +173,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
 
     // 規定の行の数
     --row-number : 8;
@@ -180,7 +186,7 @@ section {
       list-style-type: none;
       border-radius: 0 0 30px 30px;
       box-shadow: 10px 10px 30px rgba(var(--primary-color-rgb), 0.3);
-      padding: 30px 50px 30px 50px;
+      padding: 2rem 2rem 2rem 2rem;
       background-color: white;
       
       li {
@@ -192,9 +198,9 @@ section {
         &::before {
           content: counter(tocItem);
           font-size: var(--font-size-text-large);
-          width: calc(var(--font-size-text-large) + 10px);
-          height: calc(var(--font-size-text-large) + 10px);
-          margin: 0 30px 0 10px;
+          width: calc(var(--font-size-text-large) + 0.6rem);
+          height: calc(var(--font-size-text-large) + 0.6rem);
+          margin: 0 1rem 0 0.6rem;
     
           display: inline-flex;
           justify-content: center;
@@ -215,7 +221,7 @@ section {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(var(--row-number), auto);
       grid-auto-flow: column;
-      row-gap: 10px;
+      row-gap: 0.6rem;
     }
   }
   // 目次クラスバージョン2(フレックスボックス)
@@ -227,7 +233,7 @@ section {
       height: var(--toc-ul-height);
       display: flex;
       flex-flow: column wrap;
-      gap: 10px;
+      gap: 0.6rem;
       li {
         width: 50%;
       }
@@ -242,7 +248,7 @@ section {
       margin-top: auto;
 
       width: 100%;
-      height: min(70px);
+      min-height: 4.5rem;
       border-style: dashed;
       border-width: 2px 0 0 0;
       border-color: var(--primary-color);
@@ -252,11 +258,11 @@ section {
 
   // 終了ページクラス
   &.end-page {
-    font-size: var(--font-size-2);
     text-align: center;
     padding-bottom: 20%;
     p {
       margin: auto 0;
+      font-size: var(--font-size-3);
     }
   }
 }

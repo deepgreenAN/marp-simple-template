@@ -6,7 +6,7 @@
   // それぞれのwidth
   --left-width: 1fr;
   --right-width: 1fr;
-  --gap: 0px;
+  --gap: 0;
 
   display: grid;
   grid-template-columns: var(--left-width) var(--right-width);
@@ -20,7 +20,7 @@
   --left-width: 1fr;
   --center-width: 1fr;
   --right-width: 1fr;
-  --gap: 0px;
+  --gap: 0;
 
   display: grid;
   grid-template-columns: var(--left-width) var(--center-width) var(--right-width);

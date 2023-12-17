@@ -4,9 +4,10 @@ section {
         width: 100%;
         left: 0;
         bottom: 0;
-        padding-bottom: 5px;
+        padding-bottom: calc(0.4 * var(--font-size-page));
         text-align: center;
         content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+        font-size: var(--font-size-page)
     }
 }
 
@@ -24,11 +25,12 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 0 10px 10px 10px;
+        padding: 0 0.6rem 0.6rem 0.6rem;
+        font-size: var(--font-size-footer);
     
         .logo-container {
-            margin-right: 30px;
-            width: 250px;
+            margin-right: 3%;
+            width: 20%;
             img {
                 width: 100%;
             }
