@@ -463,8 +463,8 @@ dddd
 
 </div>
 
-<!-- 特殊文字で適当なものがあれば図形として利用できる -->
-<div class="right-curly-brace">&#x7D;</div>
+<!-- ユニコード文字で適当なものがあれば図形として利用できる -->
+<div class="right-curly-brace"></div>
 
 <div class="fukidashi">
   こちらは吹き出しです

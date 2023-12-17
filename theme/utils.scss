@@ -126,6 +126,13 @@
   }
 }
 
+// 右の中括弧
+.right-curly-brace {
+  &::before {
+    content: "\007D";
+  }
+}
+
 // 吹き出し
 .fukidashi {
   position: relative;

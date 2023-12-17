@@ -215,6 +215,10 @@ footer .bottom-bar {
   background-color: color-mix(in srgb, var(--secondary-color) 30%, white 70%);
 }
 
+.right-curly-brace::before {
+  content: "}";
+}
+
 .fukidashi {
   position: relative;
   min-width: 10rem;
