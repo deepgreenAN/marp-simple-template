@@ -110,7 +110,7 @@
       bottom: 0;
       left: 0;
       transform: skew(-45deg);
-      background-color: rgba(var(--primary-color-rgb), 0.3);
+      background-color: color-mix(in srgb, var(--primary-color) 30%, white 70%);
       border-right: var(--border-width) solid white;
       z-index: -2;
     }
@@ -123,7 +123,7 @@
     }
 
     &.active::before {
-      background-color: rgba(var(--secondary-color-rgb), 0.3);
+      background-color: color-mix(in srgb, var(--secondary-color) 30%, white 70%);
     }
   }
 }

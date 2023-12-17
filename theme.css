@@ -18,7 +18,7 @@ header .header-container {
   height: 100%;
   border-style: solid;
   border-width: 0 0 5px 0;
-  border-color: rgba(var(--text-color-rgb), 0.7);
+  border-color: color-mix(in srgb, var(--text-color) 70%, white 30%);
   margin: 0 25px 0 25px;
   display: flex;
   align-items: flex-end;
@@ -200,7 +200,7 @@ footer .bottom-bar {
   bottom: 0;
   left: 0;
   transform: skew(-45deg);
-  background-color: rgba(var(--primary-color-rgb), 0.3);
+  background-color: color-mix(in srgb, var(--primary-color) 30%, white 70%);
   border-right: var(--border-width) solid white;
   z-index: -2;
 }
@@ -212,7 +212,7 @@ footer .bottom-bar {
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 .state div.active::before {
-  background-color: rgba(var(--secondary-color-rgb), 0.3);
+  background-color: color-mix(in srgb, var(--secondary-color) 30%, white 70%);
 }
 
 .fukidashi {
@@ -303,7 +303,7 @@ code {
   font-family: var(--font-family-code);
   font-size: var(--font-size-text-small);
   border-radius: 4px;
-  background-color: rgba(var(--primary-color-rgb), 0.3);
+  background-color: color-mix(in srgb, var(--primary-color) 30%, white 70%);
 }
 
 strong {
@@ -336,7 +336,7 @@ table th {
   border-bottom: 2px solid var(--text-color);
 }
 table tr {
-  border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.3);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color) 30%, white 70%);
 }
 table tr:last-child {
   border-bottom: 2px solid var(--text-color);
