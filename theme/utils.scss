@@ -10,7 +10,7 @@
   }
   .caption {
     font-size: var(--font-size-text);
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
   }
 }
 
@@ -21,7 +21,7 @@
   flex-direction: column;
   border-left: 8px solid;
   border-radius: 4px;
-  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+  padding: 0.6em 1.2em 0.6em 1.2em;
 
   &:not(:last-child) {
     margin-bottom: 0.6rem;
@@ -29,17 +29,17 @@
 
   .caption {
     width: 100%;
-    height: calc(1.2 * var(--font-size-text-large));
+    height: 1.2em;
     font-size: var(--font-size-text-large);
     font-weight: bold;
-    margin-bottom: calc(0.5 * var(--font-size-text-large));
+    margin-bottom: 0.5em;
 
     display: inline-flex;
     align-items: center;
 
     &::before {
-      width: calc(1.9 * var(--font-size-text-large));
-      margin: calc(0.3 * var(--font-size-text-large)) calc(0.6 * var(--font-size-text-large)) 0 0;
+      width: 1.9em;
+      margin: 0.3em 0.6em 0 0;
     }
   }
 }
@@ -51,7 +51,7 @@
 
   .caption::before {
     content: url("assets/template/info.svg");
-    width: calc(1.7 * var(--font-size-text-large));
+    width: 1.7em;
   }
 }
 
@@ -88,15 +88,15 @@
   color: var(--text-color);
   
   &>div {
-    min-width: 7rem;
-    height: 2.3rem;
-    position: relative;
-    padding: 0 0.6rem 0 0.6rem;
     font-size: var(--font-size-text);
+    min-width: 7em;
+    height: 2.3em;
+    padding: 0 0.6em 0 0.6em;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 2.3em; // 縦の中央寄せのため
+    position: relative; // ::beforeのabsoluteのため
+
     --radius: 20%;
     --border-width: 3px;
     
@@ -136,12 +136,12 @@
 // 吹き出し
 .fukidashi {
   position: relative;
-  min-width: 10rem;
+  min-width: 10em;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.5rem;
-  min-height: 4rem;
+  padding: 0.5em;
+  min-height: 4em;
   
   background-color: #9f9fff;
   border-radius: 15px;

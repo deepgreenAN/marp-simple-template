@@ -4,10 +4,10 @@ section {
         width: 100%;
         left: 0;
         bottom: 0;
-        padding-bottom: calc(0.4 * var(--font-size-page));
+        font-size: var(--font-size-page);
+        padding-bottom: 0.4em;
         text-align: center;
         content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
-        font-size: var(--font-size-page)
     }
 }
 
