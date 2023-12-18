@@ -107,16 +107,15 @@ footer .bottom-bar {
   display: grid;
 }
 
-.img-container {
+figure {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 }
-.img-container img {
+figure img {
   border-radius: 10px;
 }
-.img-container .caption {
+figure figcaption {
   font-size: var(--font-size-text);
   margin-top: 0.5em;
 }

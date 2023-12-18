@@ -107,12 +107,10 @@ fugafugaに関わる開発
 
 </div>
 <div class="right-container">
-  <div class="img-container">
+  <figure>
     <img src="./assets/demo/pc.jpg" alt="pc">
-    <div class="caption">
-      フリー素材のPC
-    </div>
-  </div>
+    <figcaption>フリー素材のPC</figcaption>
+  </figure>
 </div>
 
 <!-- 以下はスタイル -->
